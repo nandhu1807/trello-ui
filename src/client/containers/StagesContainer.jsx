@@ -115,7 +115,7 @@ const StagesContainer = props => {
     <>
       <DragDropContext onDragEnd={onDragEnd}>
         <Container>
-          {props.stages.map((stage, index) => {
+          {props.stages !== undefined && props.stages.map((stage, index) => {
             const tasks = getTaskByStageId(stage.stageId);
             return <Stages key={index} stage={stage} tasks={tasks} addNewTask={addNewTask} />;
           })}
